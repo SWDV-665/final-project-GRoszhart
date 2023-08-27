@@ -1,0 +1,7 @@
+{
+  "name": "discgolf",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

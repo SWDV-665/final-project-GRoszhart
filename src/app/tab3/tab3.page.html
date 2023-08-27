@@ -1,0 +1,46 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Courses
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding [fullscreen]="true">
+  <div class="main">
+    <ion-list>
+      <ion-list-header>
+        <h1>My Courses</h1>
+      </ion-list-header>
+
+      <ion-item-sliding *ngFor="let item of items; let i = index">
+        <ion-item>
+          <ion-label>
+            <h2>Name: {{item.name}}</h2>
+            <p>City: {{item.city}}</p>
+            <p>State: {{item.state}}</p>
+            <p>Hole Count: {{item.holes}}</p>
+            <p>Par: {{item.par}}</p>
+            <p>Review/Comments: {{item.review}}</p>
+          </ion-label>
+        </ion-item>
+        <ion-item-options>
+          <button (click)="editItem(item, i)" ion-button class="editbutton" icon-start>
+            <ion-icon name="create"></ion-icon>
+            Edit
+          </button>
+          <button (click)="removeItem(item, i)" ion-button class="deletebutton" icon-start>
+            <ion-icon name="trash"></ion-icon>
+            Delete
+          </button>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-list>
+  </div>
+  <ion-fab slot="fixed" vertical="top" horizontal="end">
+    <ion-fab-button (click)="addItem()" ion-fab mini>
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+</ion-content>
